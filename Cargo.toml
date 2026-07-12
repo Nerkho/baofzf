@@ -10,7 +10,7 @@ repository = "https://github.com/nerkho/baofzf"
 clap      = { version = "4", features = ["derive"] }
 tokio     = { version = "1", features = ["full"] }
 vaultrs   = "0.8.0"
-skim      = "5.0.0"
+skim      = "5.1.0"
 serde_json = "1"
 crossterm = "0.29.0"
 json_to_table = "0.13"
