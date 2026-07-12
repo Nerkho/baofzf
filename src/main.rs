@@ -65,7 +65,7 @@ fn setup_client() -> Result<VaultClient, Box<dyn Error>> {
         env::var("BAO_TOKEN").unwrap_or_else(|_| env::var("VAULT_TOKEN").unwrap_or_default());
 
     // if BAO_TOKEN/VAULT_TOKEN are not set attempt to read the token from ~/.vault-token
-    if token == "" {
+    if token.is_empty() {
         let token_path = format!(
             "{}/.vault-token",
             env::var("HOME").unwrap_or_else(|_| "~".to_string())
