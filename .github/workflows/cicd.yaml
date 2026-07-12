@@ -20,19 +20,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7
-    - uses: actions-rs/toolchain@v1
+    - uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
         toolchain: stable
+        components: clippy, rustfmt
     - name: Clippy
       run: cargo clippy --all --all-targets
-    - name: Format
-      run: cargo fmt --all -- --check
+    - name: Rustfmt Check
+      uses: actions-rust-lang/rustfmt@v1
 
   test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v7
-    - uses: actions-rs/toolchain@v1
+    - uses: actions-rust-lang/setup-rust-toolchain@v1
       with:
         toolchain: stable
     - name: Check
