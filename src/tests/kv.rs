@@ -36,13 +36,7 @@ async fn list_kvv2() -> Result<(), Box<dyn std::error::Error>> {
         kv2::set(&client, "kv2", secret, &data).await?;
     }
 
-    let mut server_secret_list = list_secrets(
-        &client,
-        &"kv2".to_string(),
-        &"".to_string(),
-        &"2".to_string(),
-    )
-    .await?;
+    let mut server_secret_list = list_secrets(&client, &"kv2", &"".to_string(), &"2").await?;
 
     secret_list.sort();
     server_secret_list.sort();
@@ -76,13 +70,7 @@ async fn list_kvv1() -> Result<(), Box<dyn std::error::Error>> {
         kv1::set(&client, "kv1", secret, &data).await?;
     }
 
-    let mut server_secret_list = list_secrets(
-        &client,
-        &"kv1".to_string(),
-        &"".to_string(),
-        &"1".to_string(),
-    )
-    .await?;
+    let mut server_secret_list = list_secrets(&client, &"kv1", &"".to_string(), &"1").await?;
 
     secret_list.sort();
     server_secret_list.sort();
