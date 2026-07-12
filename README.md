@@ -65,6 +65,8 @@ The OpenBao environement variables take precedence over the Vault ones.
 
 ## Contributing
 
+This is a learning project. Please avoid using LLMs/Agents when contributing.
+
 ### Tests
 
 Tests relies on spinning up an OpenBao container with [testcontainers-rs](https://github.com/testcontainers/testcontainers-rs). When using podman, the `DOCKER_HOST` env var needs to point a podman socket:
