@@ -2,6 +2,8 @@
 
 `baofzf` is a simple fuzzy finder for [OpenBao](https://openbao.org)/[HashiCorp Vault](https://www.vaultproject.io/) based on [skim](https://github.com/skim-rs/skim) and [vaultrs](https://docs.rs/vaultrs/latest/vaultrs/).
 
+![Demo](demo.gif)
+
 ## Current feature
 
 * KV (v1 + v2)
@@ -31,7 +33,7 @@ export BAO_ADDR=http://127.0.0.1:8200
 bao login # export BAO_TOKEN=
 
 # fuzz through all secrets in "my-kv/" mount at "my_app/" supbath
-$name -m my-kv -p my-app
+baofzf -m my-kv -p my-app
 ```
 
 ### Flags
