@@ -1,0 +1,18 @@
+// Project-local debug tasks
+//
+// For more documentation on how to configure debug tasks,
+// see: https://zed.dev/docs/debugger
+[
+  {
+    "name": "Debug",
+    "adapter": "CodeLLDB",
+    "label": "Build & Debug",
+    "request": "launch",
+    "program": "$ZED_WORKTREE_ROOT/target/debug/baofzf",
+    "args": ["-m secret"],
+    "env": {
+      "BAO_ADDR": "http://127.0.0.1:8200",
+      "BAO_TOKEN": "root",
+    },
+  },
+]

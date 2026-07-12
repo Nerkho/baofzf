@@ -1,0 +1,20 @@
+[package]
+name = "baofzf"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+authors = ["Yannis Rachdi <yannis.rachdi@pm.me>"]
+repository = "https://github.com/nerkho/baofzf"
+
+[dependencies]
+clap      = { version = "4", features = ["derive"] }
+tokio     = { version = "1", features = ["full"] }
+vaultrs   = "0.8.0"
+skim      = "5.0.0"
+serde_json = "1"
+crossterm = "0.29.0"
+json_to_table = "0.13"
+testcontainers = { version = "0.27.3", features = ["http_wait"] }
+testcontainers-modules = "0.15.0"
+tempfile = "3.27.0"
+edit = "0.1.5"
