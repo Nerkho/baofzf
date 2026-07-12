@@ -19,18 +19,13 @@ pub async fn list_secrets(
     if kvv == "2" {
         for item in kv2::list(client, mount, path).await? {
             if item.ends_with("/") {
-                let s = match Box::pin(list_secrets(
+                let s = Box::pin(list_secrets(
                     client,
                     mount,
                     &format!("{}{}", path, item),
                     kvv,
                 ))
-                .await
-                {
-                    Ok(s) => s,
-                    // Ignore supbpath with capabilities=deny
-                    Err(_) => continue,
-                };
+                .await?;
                 secret_list.extend(s.iter().map(|i| format!("{}{}", item, i)));
             } else {
                 secret_list.push(item);
@@ -41,18 +36,13 @@ pub async fn list_secrets(
         let kv_v1_list = kv1::list(client, mount, path).await?;
         for item in kv_v1_list.data.keys {
             if item.ends_with("/") {
-                let s = match Box::pin(list_secrets(
+                let s = Box::pin(list_secrets(
                     client,
                     mount,
                     &format!("{}{}", path, item),
                     kvv,
                 ))
-                .await
-                {
-                    Ok(s) => s,
-                    // Ignore supbpath with capabilities=deny
-                    Err(_) => continue,
-                };
+                .await?;
                 secret_list.extend(s.iter().map(|i| format!("{}{}", item, i)));
             } else {
                 secret_list.push(item);
