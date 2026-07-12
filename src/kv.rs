@@ -10,9 +10,9 @@ use vaultrs::kv2;
 /// Returns a list of secret and their path relative to the mount point.
 pub async fn list_secrets(
     client: &VaultClient,
-    mount: &String,
+    mount: &str,
     path: &String,
-    kvv: &String,
+    kvv: &str,
 ) -> Result<Vec<String>, Box<dyn Error>> {
     let mut secret_list = Vec::new();
 
@@ -56,11 +56,11 @@ pub async fn list_secrets(
 /// Read secret, transform json into a nice table using json_to_table and return it as String.
 pub async fn read_secret(
     client: &VaultClient,
-    mount: &String,
-    path: &String,
-    kvv: &String,
+    mount: &str,
+    path: &str,
+    kvv: &str,
 ) -> Result<String, Box<dyn Error>> {
-    let secret = match kvv.as_str() {
+    let secret = match kvv {
         "2" => kv2::read::<serde_json::Value>(client, mount, path).await?,
         "1" => kv1::get::<serde_json::Value>(client, mount, path).await?,
         _ => return Err("Unknown KV version".into()),
@@ -74,11 +74,11 @@ pub async fn read_secret(
 /// Fetch selected secret and open the default editor. Update secret upon leaving the editor.
 pub async fn edit_secret(
     client: &VaultClient,
-    mount: &String,
-    path: &String,
-    kvv: &String,
+    mount: &str,
+    path: &str,
+    kvv: &str,
 ) -> Result<(), Box<dyn Error>> {
-    let current_secret = match kvv.as_str() {
+    let current_secret = match kvv {
         "2" => kv2::read::<serde_json::Value>(client, mount, path).await?,
         "1" => kv1::get::<serde_json::Value>(client, mount, path).await?,
         _ => return Err("Unknown KV version".into()),
@@ -89,7 +89,7 @@ pub async fn edit_secret(
         Err(e) => return Err(format!("Failed to open secret in default editor - {e}").into()),
     };
 
-    match kvv.as_str() {
+    match kvv {
         "2" => {
             let kv2_value: serde_json::Value = match serde_json::from_str(&edited) {
                 Ok(value) => value,

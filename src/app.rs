@@ -17,10 +17,10 @@ impl SkimItem for SecretItem {
 pub async fn setup_skim(
     keys: &[String],
     client: &VaultClient,
-    mount: &String,
-    path: &String,
+    mount: &str,
+    path: &str,
     query: &String,
-    kvv: &String,
+    kvv: &str,
 ) -> Result<(), Box<dyn Error>> {
     // Feed keys into skim via a channel
     let (tx, rx): (SkimItemSender, SkimItemReceiver) = unbounded();
@@ -66,9 +66,9 @@ pub async fn setup_skim(
 async fn handle_key_event(
     output: SkimOutput,
     client: &VaultClient,
-    mount: &String,
+    mount: &str,
     full_path: String,
-    kvv: &String,
+    kvv: &str,
 ) -> Result<(), Box<dyn Error>> {
     match (output.final_key.code, output.final_key.modifiers) {
         (KeyCode::Enter, _) => {
