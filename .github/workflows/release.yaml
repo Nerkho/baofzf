@@ -1,0 +1,20 @@
+on: workflow_dispatch
+
+name: Manual Publish
+
+env:
+  RUST_TOOLCHAIN: stable
+  TOOLCHAIN_PROFILE: minimal
+
+jobs:
+  publish:
+    name: Publish to crates.io
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - uses: katyo/publish-crates@v2
+        with:
+          registry-token: ${{ secrets.CRATES_IO }}
