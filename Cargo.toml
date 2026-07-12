@@ -5,6 +5,7 @@ edition = "2024"
 license = "MIT"
 authors = ["Yannis Rachdi <yannis.rachdi@pm.me>"]
 repository = "https://github.com/nerkho/baofzf"
+description = "Fuzzy finder for OpenBao and Vault"
 
 [dependencies]
 clap      = { version = "4", features = ["derive"] }

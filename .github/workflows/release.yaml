@@ -2,10 +2,6 @@ on: workflow_dispatch
 
 name: Manual Publish
 
-env:
-  RUST_TOOLCHAIN: stable
-  TOOLCHAIN_PROFILE: minimal
-
 jobs:
   publish:
     name: Publish to crates.io
