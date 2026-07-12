@@ -13,19 +13,7 @@
 
 In general, capability to list all secrets under a specific path is required for `baofzf` to work.
 
-`baofzf` will ignore supbath were the token has no access.
-E.g, with the policy below, `baofzf` will list all secrets at the top level but not those below `subpath`.
-```hcl
-path "kv/metadata/*" {
-	capabilities = ["list","read"]
-}
-
-path "kv/metadata/subpath/*" {
-	capabilities = ["deny"]
-}
-```
-
-Additionally OpenBao can filter list results based on the token capabilites [using `list_scan_response_keys_filter_path` parameter in the policy](https://openbao.org/docs/concepts/policies/#filtering-list-or-scan-results).
+That said, OpenBao is able to filter list results based on the token capabilites [using `list_scan_response_keys_filter_path` parameter in the policy](https://openbao.org/docs/concepts/policies/#filtering-list-or-scan-results).
 
 ## Install
 
