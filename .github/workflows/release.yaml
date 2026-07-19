@@ -21,6 +21,8 @@ jobs:
         if: ${{ !inputs.skip_cratesio }}
 
   release:
+    permissions:
+      contents: write
     name: Release - ${{ matrix.platform.release_for }}
     strategy:
       matrix:
