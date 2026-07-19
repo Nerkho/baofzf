@@ -36,7 +36,7 @@ pub async fn setup_skim(
 
     // Configure and run skim
     let options = SkimOptionsBuilder::default()
-        .height("75%".to_string())
+        .height("40%".to_string())
         .multi(false)
         .query(query)
         .prompt(">".to_string())

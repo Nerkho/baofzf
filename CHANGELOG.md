@@ -16,6 +16,7 @@ and this project adheres to
 
 ### Added
 
+- chore: reduce skim height
 - ci: add github release job
 
 ## [0.1.0] - 2021-08-22
