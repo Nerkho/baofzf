@@ -10,7 +10,13 @@ and this project adheres to
 
 ### Added
 
-- 
+-
+
+## [0.1.1] - 2021-08-22
+
+### Added
+
+- ci: add github release job
 
 ## [0.1.0] - 2021-08-22
 
