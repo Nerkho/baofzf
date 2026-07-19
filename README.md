@@ -19,13 +19,17 @@ That said, OpenBao is able to filter list results based on the token capabilites
 
 ## Install
 
-* With `cargo`:
+### GitHub release
+
+You can grab the binary directly from the [GitHub release](https://github.com/Nerkho/baofzf/releases/latest).
+
+### crates.io
+
+Using `cargo`:
 
 ```
 cargo install baofzf
 ```
-
-* Grab the binary from the [GitHub release](https://github.com/Nerkho/baofzf/releases/latest)
 
 ## Usage
 
