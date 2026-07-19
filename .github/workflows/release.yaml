@@ -44,4 +44,3 @@ jobs:
         with:
           executable-name: baofzf
           target: ${{ matrix.platform.target }}
-        if: matrix.toolchain == 'stable'
