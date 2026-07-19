@@ -10,7 +10,14 @@ and this project adheres to
 
 ### Added
 
-- 
+-
+
+## [0.1.1] - 2021-08-22
+
+### Added
+
+- chore: reduce skim height
+- ci: add github release job
 
 ## [0.1.0] - 2021-08-22
 
