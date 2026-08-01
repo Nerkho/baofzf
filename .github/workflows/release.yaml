@@ -41,7 +41,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Build executable
-        uses: houseabsolute/actions-rust-cross@v0
+        uses: houseabsolute/actions-rust-cross@v1
         with:
           target: ${{ matrix.platform.target }}
           args: "--locked --release"
