@@ -2216,9 +2216,9 @@ dependencies = [
 
 [[package]]
 name = "json_to_table"
-version = "0.13.0"
+version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1f91246cf42b255a705436e360ca5894e376a50fdf696e4e60cb1bb6dd648e21"
+checksum = "0ec64c9908ffa97b6ef6044d96c9f56de1c81643d3b9fbc2823e8847ab11b467"
 dependencies = [
  "serde_json",
  "tabled",
@@ -4345,9 +4345,9 @@ dependencies = [
 
 [[package]]
 name = "tabled"
-version = "0.21.0"
+version = "0.22.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b5dc662e6da844ad6e428ad16b57967c9d33c82e16bb1c258326c0c078605dff"
+checksum = "2d2596a104db1900b943f97d793a6c99addca918c4525c999f751a0f17d472eb"
 dependencies = [
  "papergrid",
  "testing_table",
